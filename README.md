@@ -1,6 +1,6 @@
 # DDNS updater
 
-A small tool to update your dynamic DNS
+A small tool to update your dynamic DNS. Currrently only Namecheap is supported.
 
 ## Config file
 
