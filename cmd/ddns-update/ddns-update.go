@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"gitlab.com/rafadc/ddns-update/internal/update_dns"
+	"github.com/rafadc/ddns-update/internal/update_dns"
 )
 
 func main() {

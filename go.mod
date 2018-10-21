@@ -1,4 +1,4 @@
-module gitlab.com/rafadc/ddns-update
+module github.com/rafadc/ddns-update
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect

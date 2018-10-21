@@ -8,8 +8,8 @@ import (
 
 	"github.com/spf13/viper"
 
-	"gitlab.com/rafadc/ddns-update/internal/find_my_ip"
-	"gitlab.com/rafadc/ddns-update/internal/namecheap"
+	"github.com/rafadc/ddns-update/internal/find_my_ip"
+	"github.com/rafadc/ddns-update/internal/namecheap"
 )
 
 type Domain struct {
