@@ -51,7 +51,7 @@ func updateDns(method string, subdomain string, domain string, ip string, key st
 		log.Fatal("Only namecheap supported")
 		os.Exit(1)
 	}
-	namecheap.UpdateDns(subdomain, subdomain, ip, key)
+	namecheap.UpdateDns(subdomain, domain, ip, key)
 }
 
 func readConfig() {
