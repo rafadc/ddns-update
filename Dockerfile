@@ -6,7 +6,6 @@ WORKDIR /go/src/gitlab.com/rafadc/ddns-update/
 
 COPY . ./
 
-RUN dep ensure
 RUN make build
 
 FROM alpine:3.6
