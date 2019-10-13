@@ -16,7 +16,7 @@ func MyIP() (string, error) {
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 
-	if err != nil {
+	if err != nil || body != "" {
 		return "", errors.New("Can't get own ip from " + ip_find_source)
 	}
 
