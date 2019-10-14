@@ -45,11 +45,11 @@ func StartFromConfigFile() {
 func updateDomains(myIP string) {
 	for domainConfigName, domainDetails := range config.domains {
 		log.Printf("Updating %s", domainConfigName)
-		updateDns(domainDetails.method, domainDetails.subdomain, domainDetails.domain, myIP, domainDetails.key)
+		updateDNS(domainDetails.method, domainDetails.subdomain, domainDetails.domain, myIP, domainDetails.key)
 	}
 }
 
-func updateDns(method string, subdomain string, domain string, ip string, key string) {
+func updateDNS(method string, subdomain string, domain string, ip string, key string) {
 	if method != "namecheap" {
 		log.Fatal("Only namecheap supported")
 		os.Exit(1)
@@ -68,7 +68,7 @@ func readConfig() {
 	viper.SetDefault("domains", map[string]Domain{})
 	err := viper.ReadInConfig()
 	if err != nil {
-		panic(fmt.Errorf("Error reading config file: %s \n", err))
+		panic(fmt.Errorf("Error reading config file: %s", err))
 	}
 
 	config = Config{
