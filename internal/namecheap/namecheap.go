@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+// UpdateDns changes the DNS entry for namecheap
 func UpdateDns(subdomain string, domain string, ip string, key string) {
 	url := "https://dynamicdns.park-your-domain.com/update?host=" + subdomain + "&domain=" + domain + "&password=" + key + "&ip=" + ip
 	log.Printf("Updating %s", url)

@@ -12,6 +12,7 @@ import (
 	"github.com/rafadc/ddns-update/internal/namecheap"
 )
 
+// Domain represents one of the DNS entries
 type Domain struct {
 	method    string
 	domain    string
@@ -19,6 +20,7 @@ type Domain struct {
 	key       string
 }
 
+// Config represents the configuration read from the config file
 type Config struct {
 	minutes_between_updates int
 	domains                 map[string]Domain
@@ -26,23 +28,24 @@ type Config struct {
 
 var config = Config{}
 
+// StartFromConfigFile reads the config file and applies it
 func StartFromConfigFile() {
 	readConfig()
 	for {
-		myIp, err := find_my_ip.MyIP()
+		myIP, err := find_my_ip.MyIP()
 		if err != nil {
 			log.Printf("Couldn't get IP %s", err)
 		} else {
-			updateDomains(myIp)
+			updateDomains(myIP)
 		}
 		time.Sleep(time.Duration(config.minutes_between_updates) * time.Minute)
 	}
 }
 
-func updateDomains(myIp string) {
+func updateDomains(myIP string) {
 	for domainConfigName, domainDetails := range config.domains {
 		log.Printf("Updating %s", domainConfigName)
-		updateDns(domainDetails.method, domainDetails.subdomain, domainDetails.domain, myIp, domainDetails.key)
+		updateDns(domainDetails.method, domainDetails.subdomain, domainDetails.domain, myIP, domainDetails.key)
 	}
 }
 
