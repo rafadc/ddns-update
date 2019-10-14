@@ -50,3 +50,9 @@ There a list of domains is specified. The key is a descriptive name for the doma
 ## Development
 
 Following the guide at https://github.com/golang-standards/project-layout
+
+To build just run
+
+``` shell
+make
+```

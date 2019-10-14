@@ -1,2 +1,7 @@
+.PHONY: build
+
+.ONESHELL:
 build:
-	go build -o target/ddns-update -v cmd/ddns-update/ddns-update.go
+	mkdir -p build
+	cd cmd/ddns-update
+	go build -v -o ../../build/ddns-update .
