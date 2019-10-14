@@ -14,5 +14,5 @@ RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 RUN update-ca-certificates
 
 RUN mkdir /app
-COPY --from=gobuild /ddns-update/target/ddns-update /app
+COPY --from=gobuild /ddns-update/build/ddns-update /app
 CMD ["/app/ddns-update"]
